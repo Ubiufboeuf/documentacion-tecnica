@@ -1,18 +1,18 @@
 ---
-title: Welcome to Starlight
-description: Get started building your docs site with Starlight.
-template: splash
+title: Documentación Técnica - <br> Proyecto Final
+description: Documentación profunda a nivel técnico (para desarrolladores) para nuestro proyecto de fin de año de 3º.
+template: splash # Básicamente oculta el sidebar en esta página
 hero:
-  tagline: Congrats on setting up a new Starlight project!
+  tagline: Documentación profunda a nivel técnico (para desarrolladores)
   image:
     file: ../../assets/houston.webp
   actions:
-    - text: Example Guide
-      link: /guides/example/
+    - text: Introducción
+      link: /overview/
       icon: right-arrow
-    - text: Read the Starlight docs
-      link: https://starlight.astro.build
-      icon: external
+    - text: Manual del Sistema
+      link: /system/frontend/
+      icon: right-arrow
       variant: minimal
 ---
 
@@ -21,16 +21,27 @@ import { Card, CardGrid } from '@astrojs/starlight/components';
 ## Next steps
 
 <CardGrid stagger>
-	<Card title="Update content" icon="pencil">
-		Edit `src/content/docs/index.mdx` to see this page change.
+	<Card title="Introducción" icon="open-book" href="/overview/">
+		Visión general del proyecto: propósito, alcance y arquitectura básica.
 	</Card>
-	<Card title="Add new content" icon="add-document">
-		Add Markdown or MDX files to `src/content/docs` to create new pages.
+
+	<Card title="Manual del Sistema" icon="laptop" href="/system/">
+		Explicación funcional del sistema: frontend, backend, flujo de compra, seguimiento y viajes personalizados.
 	</Card>
-	<Card title="Configure your site" icon="setting">
-		Edit your `sidebar` and other config in `astro.config.mjs`.
+
+	<Card title="Manual de Desarrollador" icon="codePen" href="/developer/">
+		Detalles técnicos para programadores: estructura del frontend, endpoints del backend y base de datos.
 	</Card>
-	<Card title="Read the docs" icon="open-book">
-		Learn more in [the Starlight Docs](https://starlight.astro.build/).
+
+	<Card title="Infraestructura" icon="cloudflare" href="/infra/">
+		Despliegue, configuración y seguridad del sistema en distintos entornos.
+	</Card>
+
+	<Card title="Notas de Estudio" icon="document" href="/study-notes/">
+		Protocolos, herramientas y referencias útiles para comprender y repasar conceptos clave.
+	</Card>
+
+	<Card title="Anexos" icon="list-format" href="/annex/">
+		Material complementario: changelog, presentaciones y bibliografía.
 	</Card>
 </CardGrid>
