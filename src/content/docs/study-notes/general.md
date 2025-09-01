@@ -4,9 +4,9 @@ title: 'Notas Generales'
 
 ### Explicación del [diagrama de Arquitectura](/overview/arquitectura/#:~:text=flowchart)
 
-Este diagrama está realizado con **Mermaid**, una herramienta que permite describir gráficos y diagramas usando una sintaxis sencilla basada en texto.  
-El tipo de diagrama empleado es un **flowchart (diagrama de flujo)**, que se utiliza para representar procesos o interacciones de manera visual y secuencial.  
+El diagrama de arquitectura está elaborado con **Mermaid**, utilizando un **flowchart orientado de izquierda a derecha (LR)**.  
+Este tipo de diagrama es especialmente útil para representar **flujos de interacción** entre distintos componentes de un sistema, ya que permite visualizar de manera secuencial cómo circula la información.  
 
-La elección de un flowchart responde a que facilita la comprensión de la arquitectura del sistema en su conjunto, mostrando las relaciones entre los distintos bloques de manera clara y ordenada. En lugar de centrarse en detalles de implementación, este tipo de diagrama permite visualizar la **estructura general y la dirección del flujo de información**, ayudando a comunicar el diseño de forma accesible tanto para desarrolladores como para lectores no técnicos.  
+La elección de un flowchart responde a que ofrece una **vista global y estructurada**: cada elemento se conecta mediante flechas que indican la dirección del flujo, lo que facilita comprender la dinámica del sistema sin necesidad de revisar el código o los detalles internos.  
 
-En resumen, el propósito del diagrama no es describir cada componente en detalle, sino ofrecer una **vista global** que sirva de apoyo a la documentación escrita.
+En este caso, el objetivo del diagrama no es describir a fondo cada componente, sino mostrar de manera **visual y accesible** la relación entre las partes principales de la arquitectura y cómo se comunican entre sí.
