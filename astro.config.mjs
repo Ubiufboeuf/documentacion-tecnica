@@ -46,18 +46,18 @@ export default defineConfig({
 				{
 					label: 'Notas de Estudio',
 					items: [
-								{ label: 'General', slug: 'study-notes/general' },
-								{ label: 'Protocolos', slug: 'study-notes/protocolos' },
-								{ label: 'Herramientas', slug: 'study-notes/herramientas' },
-								{ label: 'Links', slug: 'study-notes/links' }
+						{ label: 'General', slug: 'study-notes/general' },
+						{ label: 'Protocolos', slug: 'study-notes/protocolos' },
+						{ label: 'Herramientas', slug: 'study-notes/herramientas' },
+						{ label: 'Links', slug: 'study-notes/links' }
 					]
 				},
 				{
 					label: 'Anexos',
 					items: [
-								{ label: 'Changelog', slug: 'annex/changelog' },
-								{ label: 'Presentaciones', slug: 'annex/canva' },
-								{ label: 'Bibliografía', slug: 'annex/bibliografia' }
+						{ label: 'Changelog', slug: 'annex/changelog' },
+						{ label: 'Presentaciones', slug: 'annex/canva' },
+						{ label: 'Bibliografía', slug: 'annex/bibliografia' }
 					]
 				}
 			],
