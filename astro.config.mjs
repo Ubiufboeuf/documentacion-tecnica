@@ -46,6 +46,7 @@ export default defineConfig({
 				{
 					label: 'Notas de Estudio',
 					items: [
+								{ label: 'General', slug: 'study-notes/general' },
 								{ label: 'Protocolos', slug: 'study-notes/protocolos' },
 								{ label: 'Herramientas', slug: 'study-notes/herramientas' },
 								{ label: 'Links', slug: 'study-notes/links' }
