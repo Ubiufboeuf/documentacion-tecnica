@@ -2,23 +2,21 @@
 title: 'Arquitectura'
 ---
 
-El sistema se organiza en tres capas principales: frontend, backend y base de datos.
+El sistema se organiza en cuatro partes principales: frontend, backend, base de datos y servicios externos.
 
-El **frontend**, construido con **Astro**, **Preact (TSX)**, **TypeScript** y **TailwindCSS**, se encarga de la interfaz gráfica, la generación de páginas dinámicas y el consumo de datos desde el backend.
+El **Frontend** representa la capa de interacción directa con el usuario. Su diseño y rendimiento se gestionan con **Astro**, aprovechando **Preact (TSX)** para la lógica dinámica y **TypeScript** para la robustez del código. Todos los estilos se manejan mediante **TailwindCSS**. Esta capa consume los datos de la **API** para construir la experiencia al usuario.
 
-El **backend**, desarrollado en **PHP** bajo un patrón **MVC**, gestiona la lógica del sistema. `api.php` actúa como punto de entrada y enruta a los controladores, los cuales se comunican con los modelos para acceder a la base de datos. También mantiene la integración con **MercadoPago** y la comunicación en tiempo real mediante **Ratchet (WebSockets)**.
+El **Backend**, desarrollado en **PHP** bajo un patrón **MVC**, gestiona la lógica del sistema. `api.php` actúa como punto de entrada y enruta a los controladores, los cuales se comunican con los modelos para acceder a la base de datos. También mantiene la integración con **MercadoPago** y la comunicación en tiempo real mediante **WebSockets (Ratchet)** para el seguimiento.
 
-La **base de datos** organiza la información de usuarios, boletos, rutas, ómnibus, choferes y servicios adicionales, siguiendo el modelo entidad-relación planteado en el diseño.
+La **Base de datos** organiza la información de:
 
-```mermaid
-flowchart LR
-  Persona((Usuario)) -->|HTTP| Frontend[Frontend (Vista)]
-  Frontend -->|Peticiones| API[api.php]
-  API --> Controller[Controladores]
-  Controller --> Modelos[Modelos]
-  Modelos --> DB[(MySQL/MariaDB)]
-  API <--> WebSockets[(Ratchet PHP)]
-  API <--> MercadoPago[(API externa)]
-```
+- usuarios
+- boletos
+- rutas fijas
+- ómnibus (seguimiento)
+- choferes
+- y servicios adicionales
 
-Para una explicación detallada de este diagrama y la justificación de cada elemento, ver la nota [Notas Generales](/study-notes/general#)
+siguiendo el modelo entidad-relación planteado en la imagen.
+
+![alt text](/assets/mer.png)
