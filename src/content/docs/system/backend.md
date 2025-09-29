@@ -1,3 +1,79 @@
 ---
-title: "Hola"
+title: "Backend"
 ---
+
+## Características Principales
+- **Registro de Usuarios**: Permite crear nuevas cuentas con validación de datos.
+- **Login y Autenticación**: Verifica credenciales y maneja sesiones de usuario.
+- **Logout**: Cierra la sesión del usuario actual.
+- **Verificación de Sesión**: Comprueba si un usuario está logueado.
+- **Seguimiento Tiempo Real**: Servidor WebSocket que recibe y entrega la información del segumiento de los Ómnibus.
+- **Conexión Segura a BD**: Utiliza __prepared statements__ para prevenir inyecciones SQL
+- **Entrega de Rutas Fijas**: Provee información de las rutas fijas almacenadas en la carpeta `routes/`.
+- **Gestión de Viajes Personalizados**: Maneja la información de viajes personalizados que recibe de `custom-trips/`
+- **Formulario de Contacto**: Recibe quejas, sugerencias y otros mensajes a través de la ruta `contact/`.
+
+
+## Estructura del Proyecto
+El código está organizado en la carpeta `src/` con los siguientes componentes:
+
+### `src/api.php`
+- Implementa un servidor WebSocket usando la librería Ratchet.
+- Se usa para el segumiento de omnibus. Tanto para recibir los datos del chofer como para entregarlos a los usuarios.
+- El servidor corre en el puerto 8080 y responde con eco de los mensajes recibidos, o sea que en el momento que recibe lo que le entrega el chofer manda al resto de usuarios con un broadcast.
+
+### `src/controller/UsuarioController.php`
+- Controlador que maneja las operaciones relacionadas con usuarios.
+- Métodos disponibles:
+  - `registrar()`: Registra un nuevo usuario con nombre, email y contraseña.
+  - `login()`: Autentica al usuario y inicia sesión.
+  - `logout()`: Destruye la sesión actual.
+  - `verificarSesion()`: Verifica si hay una sesión activa.
+
+### `src/modelo/Conexion.php`
+- Contiene la función `connection()` que establece la conexión con la base de datos MySQL.
+- Configuración:
+  - Host: localhost
+  - Base de datos: bdproyectofinal
+  - Usuario: root
+  - Puerto: 3306
+
+### `src/modelo/UsuarioModel.php`
+- Modelo que interactúa con la tabla `usuario` en la base de datos.
+- Métodos disponibles:
+  - `registrarUsuario()`: Inserta un nuevo usuario con contraseña hasheada.
+  - `loginUsuario()`: Verifica credenciales y retorna datos del usuario.
+  - `obtenerUsuarioPorId()`: Obtiene información de un usuario por su ID.
+
+## Instalación y Configuración
+1. **Instalar Dependencias**: Ejecutar `composer install` para instalar las librerías necesarias (Ratchet).
+2. **Base de Datos**: Importar el archivo `bdproyectofinal.sql` en MySQL para crear la estructura de la base de datos.
+3. **Configuración**: Asegurarse de que el servidor MySQL esté corriendo y accesible con las credenciales especificadas.
+
+## Uso
+- **Iniciar el Servidor WebSocket**: Ejecutar `php src/api.php` desde la raíz del proyecto.
+- **API de Usuarios**: Los controladores esperan `requests POST` con los datos necesarios en formato JSON.
+- **Sesiones**: Se utilizan sesiones de PHP para mantener el estado de autenticación.
+
+## Puertos Utilizados
+
+- **Servidor WebSocket**: Corre en el puerto **8080** (`php src/api.php`).
+- **Servidor HTTP/API**: Usualmente corre en el puerto **8000** (si usas `php -S localhost:8000`) o el puerto configurado en tu servidor web (por ejemplo, Apache).
+
+> **Nota:** Ambos servidores deben estar activos y pueden funcionar en paralelo, pero en puertos diferentes.
+
+## Tecnologías Utilizadas
+- **PHP**: Lenguaje principal del backend.
+- **Ratchet**: Librería para implementar WebSocket en PHP.
+- **MySQL**: Sistema de gestión de base de datos.
+- **Composer**: Gestor de dependencias para PHP.
+
+## Notas de Seguridad
+- Las contraseñas se almacenan hasheadas usando `password_hash()`.
+- Se utilizan _prepared statements_ para todas las consultas a la base de datos.
+- La validación de entrada se realiza en el controlador antes de procesar los datos.
+
+## Archivos Adicionales
+- `composer.json` y `composer.lock`: Configuración de dependencias.
+- `Log.php`: Sistema de logging (requerido por el servidor WebSocket).
+- `errors.log`: Archivo de registro de errores.
