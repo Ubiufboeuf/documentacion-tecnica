@@ -56,7 +56,7 @@ export default defineConfig({
 					label: 'Anexos',
 					items: [
 						{ label: 'Changelog', slug: 'annex/changelog' },
-						{ label: 'Presentaciones', slug: 'annex/canva' },
+						{ label: 'Presentaciones', slug: 'annex/presentaciones' },
 						{ label: 'Bibliografía', slug: 'annex/bibliografia' }
 					]
 				}
