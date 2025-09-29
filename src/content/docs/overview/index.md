@@ -2,14 +2,16 @@
 title: 'Introducción'
 ---
 
-Este proyecto corresponde al desarrollo de una nueva versión de la web de **Berrutti Turismo**, con el objetivo de modernizar la experiencia digital tanto para la empresa como para sus usuarios.
+Este proyecto corresponde al **Proyecto de Fin de Año** desarrollado por el equipo Proxeon. El objetivo es la creación de un **sistema web de gestión de servicios**, orientado específicamente al **servicio de transporte** en colaboración con la empresa uruguaya **Berrutti Turismo**.
+
+La iniciativa busca modernizar la experiencia digital, resolviendo limitaciones de la plataforma actual mediante la creación de una web con mejoras en la experiencia de usuario, un diseño más agradable y nuevas funcionalidades.
 
 La propuesta busca resolver limitaciones de la web actual mediante:
 
 - Una interfaz más cómoda, rápida e intuitiva.
 - La posibilidad de **comprar boletos en línea** con pasarela de pago integrando MercadoPago para una **compra segura**.
+- La generación de **comprobantes digitales con códigos QR** para validar los boletos.
 - Un **sistema de seguimiento en tiempo real** de los ómnibus.
-- La generación de **comprobantes digitales con código QR** para validar los boletos.
 
 Esta documentación técnica está organizada para cubrir:
 - La **visión general** (qué hace el sistema y cómo está estructurado).  
