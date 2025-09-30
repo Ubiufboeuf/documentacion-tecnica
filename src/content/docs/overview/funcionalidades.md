@@ -2,26 +2,58 @@
 title: 'Funcionalidades'
 ---
 
-El sistema web de Berrutti Turismo está diseñado para ofrecer una experiencia de usuario fluida, cómoda y moderna, permitiendo la compra de boletos online, seguimiento en tiempo real de los ómnibus y la gestión de servicios de transporte. Las funcionalidades se dividen en tres categorías: **terminadas**, **en desarrollo** y **planeadas**.
+Las funcionalidades del sistema actualmente se dividen en tres categorías: **terminadas**, **en desarrollo** y **planeadas**.
 
 ---
 
 ## Funcionalidades terminadas
 
 ### Listado de servicios
-Sección que muestra todos los servicios que ofrece la empresa: traslados especiales, rutas regulares, promociones, etc.
 
-- Cada servicio tiene título, descripción, imagen y enlace para más detalles.  
-- Interfaz responsiva y accesible desde cualquier dispositivo.  
-- Implementación técnica: Listado dinámico desde `src/services/` y renderizado con Preact.
+Página: [`/services/`](https://proyecto-final-frontend.pages.dev/services/)
 
-(imagen de ejemplo de listado de servicios)
+Sección que muestra todos los servicios que ofrece la empresa:
+
+- venta de pasajes nacionales e internacionales
+- abonos
+- encomiendas
+- trámites
+- partidas y giros.
+
+Cada card del servicio tiene un icono, título (algunos también subtítulo), descripción y detalles.
+
+![](/assets/servicios.png)
+
+### Tipos de ómnibus
+
+Página: [`/services/`](https://proyecto-final-frontend.pages.dev/services/)
+
+Sección que muestra los tipos de ómnibus que ofrece la empresa para los viajes personalizados:
+
+- Común
+- Común - Semicama
+- Micro
+- Micro - Sin baño
+
+Igual que con los servicios, cada card del tipo tiene un icono, título, una breve descripción y detalles. 
+
+![](/assets/tipos-de-buses.png)
 
 ---
 
 ## Funcionalidades en desarrollo
 
-### Sistema de pagos
+### Sistema o Pasarela de pagos
+Página: `/buy-ticket/[ticket-id]/`.<br>
+Si la url no contiene el id del ticket, te redirige a `/buy-ticket/`.
+
+La pasarela de pagos se divide en cuatro páginas:
+
+- Información del Viaje
+- Selección de Asientos
+- Datos de Pasajeros
+- Pago y Confirmación
+
 Este página permite al usuario **buscar, visualizar y comprar boletos** para viajes fijos.
 
 - Visualización de rutas disponibles con origen, destino y horarios.  
